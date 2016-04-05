@@ -4,7 +4,7 @@
   "description": "Tool to compile and reference a list of webpack assets built in the client build and referenced in the server build",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "mocha --watch"
   },
   "keywords": [
     "universal",
@@ -14,10 +14,13 @@
     "images"
   ],
   "author": "Paddle8",
+  "repository": "https://github.com/gbrassey/universal-webpack-assets",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^3.5.0",
     "eslint": "^2.7.0",
     "eslint-config-airbnb": "^6.2.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "rewire": "^2.5.1"
   }
 }

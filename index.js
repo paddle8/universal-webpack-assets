@@ -2,7 +2,7 @@
 
 'use strict'; // eslint-disable-line strict
 
-const fs = require('fs');
+let fs = require('fs'); // eslint-disable-line prefer-const
 const path = require('path');
 
 function universalWebpackAssetsPluginApply(options, compiler) {

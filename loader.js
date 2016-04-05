@@ -1,4 +1,6 @@
-const fs = require('fs');
+'use strict';
+
+let fs = require('fs'); // eslint-disable-line prefer-const
 const path = require('path');
 
 module.exports = function universalWebpackAssetsLoader() {
