@@ -1,0 +1,23 @@
+{
+  "name": "universal-webpack-assets",
+  "version": "1.0.0",
+  "description": "Tool to compile and reference a list of webpack assets built in the client build and referenced in the server build",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "keywords": [
+    "universal",
+    "isomorphic",
+    "webpack",
+    "assets",
+    "images"
+  ],
+  "author": "Paddle8",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^2.7.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "mocha": "^2.4.5"
+  }
+}
