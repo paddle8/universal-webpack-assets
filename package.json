@@ -1,7 +1,7 @@
 {
   "name": "universal-webpack-assets",
   "version": "1.0.0",
-  "description": "Tool to compile and reference a list of webpack assets built in the client build and referenced in the server build",
+  "description": "Tool to compile a list of webpack assets during the client build (and a loader to reference them in the server build)",
   "main": "index.js",
   "scripts": {
     "test": "mocha --watch"
