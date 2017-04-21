@@ -12,7 +12,7 @@ function universalWebpackAssetsPluginApply(options, compiler) {
       regex: /\.(jpe?g|png|gif|svg)$/,
     };
 
-    const config = Object.assign({}, defaults, options, this.options.universalWebpackAssetsConfig);
+    const config = Object.assign({}, defaults, options);
 
     const publicPath = this.options.output.publicPath;
     const json = stats.toJson();
