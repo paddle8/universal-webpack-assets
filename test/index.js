@@ -11,10 +11,6 @@ describe('Plugin', () => {
       output: {
         publicPath: '/publicPath/',
       },
-      universalWebpackAssetsConfig: {
-        manifestFile: 'testing-assets.json',
-        regex: /\.wow$/,
-      },
     },
   };
   const stats = {
@@ -34,6 +30,10 @@ describe('Plugin', () => {
       ],
     }),
   };
+  const pluginOptions = {
+    manifestFile: 'testing-assets.json',
+    regex: /\.wow$/,
+  };
 
   it('should create a manifest of compiled assets', () => {
     Plugin.__with__('fs', {
@@ -44,7 +44,7 @@ describe('Plugin', () => {
         expect(manifest.assets[0].compiled).to.equal('module.exports = "/publicPath/HASH1234.wow"');
       },
     })(() => {
-      const plugin = new Plugin();
+      const plugin = new Plugin(pluginOptions);
       plugin.apply({
         plugin: (event, callback) => {
           expect(event).to.equal('done');

@@ -14,7 +14,7 @@
     "images"
   ],
   "author": "Paddle8",
-  "repository": "https://github.com/gbrassey/universal-webpack-assets",
+  "repository": "https://github.com/paddle8/universal-webpack-assets",
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.5.0",
@@ -22,5 +22,8 @@
     "eslint-config-airbnb": "^6.2.0",
     "mocha": "^2.4.5",
     "rewire": "^2.5.1"
+  },
+  "dependencies": {
+    "loader-utils": "^1.1.0"
   }
 }

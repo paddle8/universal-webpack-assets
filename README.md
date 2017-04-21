@@ -1,5 +1,7 @@
 # Universal Webpack Assets
 
+**Requires Webpack 2**
+
 This webpack plugin creates a manifest of assets that are compiled during a build (ie. images) using url-loader/file-loader.
 
 It comes with a loader to reference these assets when using webpack to create your server build.
@@ -7,38 +9,40 @@ It comes with a loader to reference these assets when using webpack to create yo
 
 ## Client
 
-```
+```js
 // webpack.config.js
 const UniversalWebpackAssetsPlugin = require('universal-webpack-assets');
 
 module.exports = {
   ...
-  universalWebpackAssetsConfig: {
-    regex: /\.(jpe?g|png|gif|svg)$/,
-    manifestFile: 'universal-assets.json',
-  },
   plugins: [
-    new UniversalWebpackAssetsPlugin(),
+    new UniversalWebpackAssetsPlugin({
+      regex: /\.(jpe?g|png|gif|svg)$/,
+      manifestFile: 'universal-assets.json',
+    }),
   ],
 };
 ```
 
 ## Server
 
-```
+```js
 //webpack.config.js
 module.exports = {
   ...
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(jpe?g|png|gif|svg)$/,
-        loader: 'universal-webpack-assets/loader',
+        use: [{
+          loader: 'universal-webpack-assets/loader',
+          options: {
+            manifestFile: path.join(baseDir, 'universal-assets.json'),
+            context: __dirname,
+          },
+        }],
       },
     ],
-  },
-  universalWebpackAssetsConfig: {
-    manifestFile: path.resolve('universal-assets.json'),
   },
 };
 ```

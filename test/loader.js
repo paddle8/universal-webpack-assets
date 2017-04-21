@@ -7,11 +7,9 @@ const loader = rewire('../loader');
 
 describe('Loader', () => {
   const context = {
-    options: {
+    query: {
       context: '/rootPath/',
-      universalWebpackAssetsConfig: {
-        manifestFile: '/rootPath/test-manifest.json',
-      },
+      manifestFile: '/rootPath/test-manifest.json',
     },
     resourcePath: '/rootPath/path/to/resource.wow',
     cacheable() {},
